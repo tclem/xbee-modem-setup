@@ -44,14 +44,14 @@ the result should look similar to this:
 
 what is all this?
 
-ATVR =>firmware version
-ATCH => channel (from 1-16)
-ATID => pan id, or Personal Area Network ID
-ATSL => serial number low (record this)
-ATSH => serial number high (record this)
-ATDL => destination low (assign the serial number low of the target modem to this)
-ATDH => destination high (assign the serial number high of the target modem to this)
-ATNI => networking identification (assign a human readable name... not necessary but very handy)
+ ATVR =>firmware version
+ ATCH => channel (from 1-16)
+ ATID => pan id, or Personal Area Network ID
+ ATSL => serial number low (record this)
+ ATSH => serial number high (record this)
+ ATDL => destination low (assign the serial number low of the target modem to this)
+ ATDH => destination high (assign the serial number high of the target modem to this)
+ ATNI => networking identification (assign a human readable name... not necessary but very handy)
 
 take a note of the serial low and high, since these will be assigned to destination high and low of the other (destination) modem
 
