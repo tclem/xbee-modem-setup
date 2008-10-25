@@ -1,0 +1,65 @@
+= XBee Modem Setup
+
+Xbee modems ship in router configuration, but can be configured as routers or coordinators with the 
+digi X-CTU software (windows only). A coordinator is necessary to configure a mesh, however 
+for direct communication between modems a coordinator is unnecessary. 
+So for two Xbee modems, the as shipped router firmware works fine.
+
+The purpose of this script:
+
+An Xbee module will only communicate with other 
+modules having the same channel (CH parameter), 
+PAN ID (ID parameter) and destination address 
+(DH + DL parameters).  Reading settings these parameters 
+is the purpose of this script
+
+This could be thought of as 3 layers: Channel, Pan ID and Destination Address low and high: DL/DH
+
+Note: when a constant is not set, that constant is not written, only read
+
+==Step 1
+
+Download and install ruby serial port library http://ruby-serialport.rubyforge.org/
+
+==Step 2
+
+Add an xbee shield with xbee shield with both jumpers in usb position (nearest the board edge) to the arduino
+connect the arduino to your computer run this script
+the result should look similar to this:
+
+ using tty.usbserial-A60048pt
+
+ Connected to: serial port
+ cmd: ATVR, result: 1220 OK 
+ cmd: ATCH, result: 16 OK 
+ cmd: ATID, result: 555 OK 
+ cmd: ATSL, result: 4052D736 OK 
+ cmd: ATSH, result: 13A200 OK 
+ cmd: ATDL, result: 4052DAF7 OK 
+ cmd: ATDH, result: 13A200 OK 
+ cmd: ATNI, result: VISCONTI OK 
+ serial port closed
+
+
+
+what is all this?
+
+ATVR =>firmware version
+ATCH => channel (from 1-16)
+ATID => pan id, or Personal Area Network ID
+ATSL => serial number low (record this)
+ATSH => serial number high (record this)
+ATDL => destination low (assign the serial number low of the target modem to this)
+ATDH => destination high (assign the serial number high of the target modem to this)
+ATNI => networking identification (assign a human readable name... not necessary but very handy)
+
+take a note of the serial low and high, since these will be assigned to destination high and low of the other (destination) modem
+
+==Step Three
+
+Enter your configurations
+and run the script
+
+==Step Four
+
+Repeat for the other Xbee modem
