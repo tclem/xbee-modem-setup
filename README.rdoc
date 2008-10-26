@@ -19,7 +19,7 @@ Note: when a constant is not set, that constant is not written, only read
 
 ==Step 1
 
-Download and install ruby serial port library http://ruby-serialport.rubyforge.org/
+Download and install ruby serial port library "http://ruby-serialport.rubyforge.org/":http://ruby-serialport.rubyforge.org/
 
 ==Step 2
 
