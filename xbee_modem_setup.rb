@@ -14,7 +14,7 @@
 # An Xbee module will only communicate with other 
 # modules having the same channel (CH parameter), 
 # PAN ID (ID parameter) and destination address 
-# (DH + DL parameters).  Reading settings these parameters 
+# (DH + DL parameters).  Reading and setting these parameters 
 # is the purpose of this script
 # 
 # This could be thought of as 3 layers: Channel, Pan ID and Destination Address low and high: DL/DH
