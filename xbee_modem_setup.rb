@@ -96,7 +96,6 @@ puts
 
 
 
-
 commands = [
  { :ATVR => ""}, # firmware version
  { :ATCH => CH}, # channel
@@ -109,10 +108,8 @@ commands = [
 ]
 
 
-
-
 require 'rubygems'
-Kernel::require 'serialport'
+require 'serialport'
 
 
 class Xbee
@@ -157,7 +154,7 @@ class Xbee
   # Write each command
 
   def cmd(cmd)
-    @port.write(cmd + "\r")
+    @port.write(cmd + " \r")
     verify(cmd)
   end
 
@@ -185,10 +182,11 @@ end
 
   commands.each do |command| 
     command.each do |k,v|
-      p.cmd("#{k.to_s}#{v}, \r") 
-      if v != ""
-        p.cmd("#{k.to_s},WR \r") 
-      end
+      # puts "#{k.to_s}#{v}"
+      p.cmd("#{k.to_s}#{v}") 
+      # if v != ""
+      #   p.cmd("#{k.to_s},WR \r") 
+      # end
     end
   end
 
